@@ -93,6 +93,6 @@ Every script that needs no key was run once against the live API, without a key,
 
 **Not run against the live API:** the 7 scripts for key holders above. Their answers were checked only for shape, against a local stub built from the published reference: writing a file, keeping the `#` lines, sending the key only as a header.
 
-**Known refusal.** On 2026-11-04, `countries.py` worked with its default selection and with `--eu_only true`, while `--covered_only true`, or any read reaching the United States row, was refused with a 403: the licence of that row's population figure is not established yet, and an unestablished licence counts as a no. The script prints the API's reason and stops. The JSON of the same request stays readable.
+**Refusals.** A selection with nothing in it answers 403, for example `countries_slug_crude_origins.py --slug greenland`. The script prints the API's reason and stops. No public file was refused on licence on 2026-11-04.
 
 **Not checked.** Each script's other options and the example in its docstring were not all run: only the default selection was.

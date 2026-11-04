@@ -186,10 +186,10 @@ period,origin_country_name,quantity_tonnes,share_pct,status,data_class,confidenc
 
 **403: this read is refused, and retrying will not help.** The body has a sentence saying why. Two kinds matter here:
 
-- A CSV download is redistribution, and the licence gate can refuse one while the JSON of the same request stays readable. A publisher's licence may not allow it, or the source behind the rows may not be established; an unestablished licence counts as a no. Captured on 2026-11-04 from `/api/countries?covered_only=true&format=csv`:
+- A CSV download is redistribution, and the licence gate can refuse one while the JSON of the same request stays readable. A publisher's licence may not allow it, or the source behind the rows may not be established; an unestablished licence counts as a no. No public file was refused on licence on 2026-11-04, so the example here is the other kind, a selection with nothing to redistribute. Captured on 2026-11-04 from `/api/countries/greenland/crude-origins?format=csv`:
 
   ```
-  403 {"detail": "This download is not available because we have not established whether the licence for U.S. Census Bureau (Vintage 2025 national population estimate (table NST-EST2025-POP)) permits redistribution. We treat an unestablished licence as a no, not as a yes. The JSON form of this endpoint still shows the numbers, and the source page records what we know about the licence."}
+  403 {"detail": "This download is not available because we hold no rows for this selection yet, so there is nothing to redistribute and no licence to check. The JSON form of this endpoint says the same thing in its data_availability block."}
   ```
 
 - A read larger than the route's cap for callers without a key. Captured on 2026-11-04 from `/api/countries/germany/crude-origins?limit=1500`:
