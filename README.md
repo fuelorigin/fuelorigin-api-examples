@@ -189,7 +189,7 @@ period,origin_country_name,quantity_tonnes,share_pct,status,data_class,confidenc
 - A CSV download is redistribution, and the licence gate can refuse one while the JSON of the same request stays readable. A publisher's licence may not allow it, or the source behind the rows may not be established; an unestablished licence counts as a no. Captured on 2026-11-04 from `/api/countries?covered_only=true&format=csv`:
 
   ```
-  403 {"detail": "This download is not available because the run that produced these values does not record which sources contributed to them, so we cannot check whether their licences permit redistribution. This affects calculated series, whose inputs come from several publishers at once. We treat an unestablished licence as a no, not as a yes. The numbers are readable as JSON from this endpoint without the format=csv parameter, and each row carries the identifiers needed to trace it through /api/provenance."}
+  403 {"detail": "This download is not available because we have not established whether the licence for U.S. Census Bureau (Vintage 2025 national population estimate (table NST-EST2025-POP)) permits redistribution. We treat an unestablished licence as a no, not as a yes. The JSON form of this endpoint still shows the numbers, and the source page records what we know about the licence."}
   ```
 
 - A read larger than the route's cap for callers without a key. Captured on 2026-11-04 from `/api/countries/germany/crude-origins?limit=1500`:
