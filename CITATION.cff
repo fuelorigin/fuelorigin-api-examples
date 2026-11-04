@@ -1,0 +1,8 @@
+cff-version: 1.2.0
+message: "The code in this repository fetches this dataset. If you use the data, please cite the dataset as below."
+title: "Fuel Origin: European oil supply data"
+type: dataset
+authors:
+  - name: "Fuel Origin (Buy More UÜ)"
+doi: 10.5281/zenodo.23940619
+url: "https://fuelorigin.org/datasets"
